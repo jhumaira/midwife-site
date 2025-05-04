@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Field Birth Care Resource Hub</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(to right, #007B5E, #009688);
+      color: white;
+      padding: 2em 1em;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 5px;
+      background-color: #ffffff;
+      border-radius: 5px;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+      font-weight: bold;
+    }
+
+    header p {
+      margin-top: 0.5em;
+      font-style: italic;
+      font-size: 1.2em;
+    }
+
+    main {
+      padding: 2em;
+    }
+
+    .resource-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .resource-list li {
+      background: white;
+      margin: 1em 0;
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .resource-list a {
+      text-decoration: none;
+      color: #007B5E;
+      font-weight: bold;
+    }
+
+    .course-section {
+      display: none;
+      background-color: #eefaf6;
+      padding: 1em;
+      margin-top: 1em;
+      border-radius: 8px;
+    }
+
+    .download-link {
+      display: inline-block;
+      margin: 0.5em 0;
+      padding: 0.5em 1em;
+      background-color: #007B5E;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .video-container {
+      margin-top: 1em;
+    }
+
+    iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 1.5em;
+      margin-top: 3em;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-form h2 {
+      margin-top: 0;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-top: 1em;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 0.75em;
+      margin-top: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      margin-top: 1em;
+      background-color: #007B5E;
+      color: white;
+      padding: 0.75em 1.5em;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #005f48;
+    }
+
+    #login-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: #eefaf6;
+    }
+
+    #login-screen form {
+      background: white;
+      padding: 2em;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 300px;
+    }
+
+    #login-screen input {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0;
+      padding: 0.5em;
+    }
+
+    #login-screen button {
+      width: 100%;
+      padding: 0.75em;
+      background-color: #007B5E;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #login-screen button:hover {
+      background-color: #005f48;
+    }
+  </style>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === 'midwife' && password === 'birth123') {
+        document.getElementById('login-screen').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      } else {
+        alert('Invalid login. Please try again.');
+      }
+    }
+
+    function toggleSection(sectionId) {
+      const sections = document.querySelectorAll('.course-section');
+      sections.forEach(section => {
+        if (section.id === sectionId) {
+          section.style.display = (section.style.display === 'block') ? 'none' : 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <div id="login-screen">
+    <form onsubmit="handleLogin(event)">
+      <h2>Login to Access Resources</h2>
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <div id="main-content" style="display: none;">
+    <header>
+      <h1>Field Birth Care Resource Hub</h1>
+      <p>Supporting midwives and nurses in remote settings</p>
+    </header>
+
+    <main>
+      <ul class="resource-list">
+        <li><a href="#" onclick="toggleSection('course-section')">Basic Birthing Care in the Field (Start Course)</a></li>
+        <li><a href="#" onclick="toggleSection('clean-kit-section')">Clean Delivery Kit Checklist (Click Here) </a></li>
+        <li><a href="#" onclick="toggleSection('transport-section')">Emergency Transport Planning (Click Here)</a></li>
+        <li><a href="#" onclick="toggleSection('resus-section')">Newborn Resuscitation Basics (Click Here) </a></li>
+        <li><a href="#" onclick="toggleSection('complications-section')">Managing Complications without Equipment (Click Here) </a></li>
+      </ul>
+
+      <div id="course-section" class="course-section">
+        <h2>Course: Basic Birthing Care in the Field</h2>
+        <ul>
+          <li>Prepare a safe birth environment in remote locations</li>
+          <li>Recognize stages of labor</li>
+          <li>Provide clean delivery using minimal supplies</li>
+          <li>Identify signs of complications</li>
+          <li>Deliver basic postpartum care</li>
+        </ul>
+        <p><strong>Duration:</strong> Approx. 2 hours | <strong>Includes downloadable guide and videos</strong></p>
+        <a class="download-link" href="field-birth-care-guide.pdf" download>Download PDF Guide</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/ncUQz3zPxJY"></iframe>
+          <iframe src="https://www.youtube.com/embed/MqKvdmZ5YoM"></iframe>
+        </div>
+      </div>
+
+      <div id="clean-kit-section" class="course-section">
+        <h2>Clean Delivery Kit Checklist</h2>
+        <ul>
+          <li>Essential items for a sterile birth environment</li>
+          <li>How to prepare makeshift clean kits</li>
+          <li>When and how to use each item</li>
+        </ul>
+        <a class="download-link" href="clean-delivery-kit.pdf" download>Download Checklist</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/bTEIn1mMmn8"></iframe>
+        </div>
+      </div>
+
+      <div id="transport-section" class="course-section">
+        <h2>Emergency Transport Planning</h2>
+        <ul>
+          <li>Creating a transport plan in advance</li>
+          <li>Coordinating with local transport options</li>
+          <li>Communicating needs quickly during emergencies</li>
+        </ul>
+        <a class="download-link" href="emergency-transport.pdf" download>Download Planning Guide</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/VrU1BxyD0vU"></iframe>
+        </div>
+      </div>
+
+      <div id="resus-section" class="course-section">
+        <h2>Newborn Resuscitation Basics</h2>
+        <ul>
+          <li>Assess a newborn's breathing and tone</li>
+          <li>Perform tactile stimulation techniques</li>
+          <li>Clear airways using basic tools or improvised methods</li>
+          <li>Begin bag-mask ventilation if available</li>
+          <li>Monitor signs of recovery or distress</li>
+        </ul>
+        <a class="download-link" href="newborn-resus-guide.pdf" download>Download Resuscitation Guide</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/9FvQcmrzNyk"></iframe>
+          <iframe src="https://www.youtube.com/embed/rF4jjei1fho"></iframe>
+        </div>
+      </div>
+
+      <div id="complications-section" class="course-section">
+        <h2>Managing Complications without Equipment</h2>
+        <ul>
+          <li>Recognizing postpartum hemorrhage</li>
+          <li>Supporting prolonged labor</li>
+          <li>Managing maternal shock</li>
+          <li>Monitoring vital signs without tools</li>
+          <li>Coordinating with community health resources</li>
+          <li>Aortic compression</li> 
+          <li>Uterine compression</li>
+          <li>Manual removal of placenta Preventing tears in birth</li> 
+          <li>Cord around neck</li>
+          <li>Stuck shoulders</li>
+          <li>The breech birth</li>
+          <li>Danger signs after birth</li>
+          <li>The birth labor delivery and early postpartum</li>
+          <li>Managing the third stage of labor</li>
+          <li>Birthing the baby</li>
+          <li>Managing the second stage of labor</li>
+          <li>Immoderate care after birth</li>
+          <li>Giving good care in labor</li>
+        </ul>
+        <a class="download-link" href="field-complications-guide.pdf" download>Download Complications Guide</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/f2LZUpX2gSE"></iframe>
+          <iframe src="https://www.youtube.com/embed/TSa1OZayzv0"></iframe>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Tell Us About Your Area</h2>
+        <form action="mailto:mustafa.ameena@gmail.com" method="POST" enctype="text/plain">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="q1">1. How many pregnant women are there in the vicinity?</label>
+          <input type="text" id="q1" name="pregnant_women" required>
+
+          <label for="q2">2. How many will not likely be able to receive proper antenatal and labor and birth care?</label>
+          <input type="text" id="q2" name="unserved_women" required>
+
+          <label for="q3">3. What level of education and/or training do the women who might attend these sessions have?</label>
+          <textarea id="q3" name="education_training" rows="3" required></textarea>
+
+          <label for="q4">What supplies, if any, might they have at a birth if they were to be supporting?</label>
+          <textarea id="q4" name="available_supplies" rows="3" required></textarea>
+
+          <label for="q5">Are we talking about basic emergency medical skills or just coping with birth in an out-of-hospital setting?</label>
+          <textarea id="q5" name="skills_context" rows="3" required></textarea>
+
+          <label for="q6">Please describe the needs as best you can:</label>
+          <textarea id="q6" name="additional_needs" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
