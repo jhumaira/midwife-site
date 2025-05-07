@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Field Birth Care Resource Hub</title>
+  <title>Iḥyā - Field Birth Care Resource Hub</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -43,6 +43,29 @@
       margin-top: 0.5em;
       font-style: italic;
       font-size: 1.2em;
+    }
+
+    .nav-buttons {
+      display: flex;
+      justify-content: center;
+      margin-top: 1em;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      background-color: #007B5E;
+      color: white;
+      padding: 0.8em 2em;
+      margin: 0 1em;
+      border-radius: 5px;
+      font-weight: bold;
+      text-align: center;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+
+    .nav-buttons a:hover {
+      background-color: #009688;
     }
 
     main {
@@ -97,16 +120,14 @@
     }
 
     .contact-form {
-  background-color: #ffffff;
-  padding: 2em;
-  margin-top: 3em;
-  margin-left: 2em;
-  margin-right: 2em;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 123, 94, 0.15);
-  width: 700px; /* or a smaller width if you prefer */
-}
-
+      background-color: #ffffff;
+      padding: 2em;
+      margin-top: 3em;
+      margin-left: 2em;
+      margin-right: 2em;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 123, 94, 0.15);
+      width: 700px;
     }
 
     .contact-form h2 {
@@ -180,49 +201,47 @@
     }
 
     .contact-form {
-  background-color: #ffffff;
-  padding: 2em;               /* Keeps internal spacing */
-  margin: 0;                  /* Removes external margins */
-  width: 100vw;               /* Full viewport width */
-  max-width: 100vw;           /* Prevents it from stopping at a narrower width */
-  box-sizing: border-box;     /* Ensures padding doesn't expand total width */
-  border-radius: 0;           /* Optional: remove rounded edges */
-  box-shadow: none;           /* Optional: remove shadow if going full-bleed */
-}
+      background-color: #ffffff;
+      padding: 2em;
+      margin: 0;
+      width: 100vw;
+      max-width: 100vw;
+      box-sizing: border-box;
+      border-radius: 0;
+      box-shadow: none;
+    }
 
-}
+    .contact-form h2 {
+      margin-top: 0;
+      font-size: 1.8em;
+      color: #007B5E;
+      margin-bottom: 1em;
+      text-align: center;
+    }
 
-.contact-form h2 {
-  margin-top: 0;
-  font-size: 1.8em;
-  color: #007B5E;
-  margin-bottom: 1em;
-  text-align: center;
-}
+    .contact-form form label {
+      display: block;
+      margin-top: 1.5em;
+      font-weight: bold;
+    }
 
-.contact-form form label {
-  display: block;
-  margin-top: 1.5em;
-  font-weight: bold;
-}
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8em;
+      margin-top: 0.5em;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
 
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 0.8em;
-  margin-top: 0.5em;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1em;
-}
-
-.contact-form button {
-  margin-top: 2em;
-  background-color: #009688;
-  color: white;
-  padding: 0.9em 2em;
-  border: none;
-}
+    .contact-form button {
+      margin-top: 2em;
+      background-color: #009688;
+      color: white;
+      padding: 0.9em 2em;
+      border: none;
+    }
   </style>
   <script>
     function handleLogin(event) {
@@ -263,9 +282,15 @@
 
   <div id="main-content" style="display: none;">
     <header>
-      <h1>Field Birth Care Resource Hub</h1>
+      <h1>Iḥyā - Field Birth Care Resource Hub</h1>
       <p>Supporting midwives and nurses in remote settings</p>
     </header>
+
+    <div class="nav-buttons">
+      <a href="#pregnancy-section" onclick="toggleSection('pregnancy-section')">Pregnancy</a>
+      <a href="#maternal-nutrition-section" onclick="toggleSection('maternal-nutrition-section')">Maternal Nutrition</a>
+      <a href="#postpartum-care-section" onclick="toggleSection('postpartum-care-section')">Postpartum Care</a>
+    </div>
 
     <main>
       <ul class="resource-list">
@@ -276,6 +301,23 @@
         <li><a href="#" onclick="toggleSection('complications-section')">Managing Complications without Equipment (Click Here)</a></li>
       </ul>
 
+      <!-- Placeholder for new sections -->
+      <div id="pregnancy-section" class="course-section">
+        <h2>Pregnancy Resources</h2>
+        <p>Content related to pregnancy care and guidelines.</p>
+      </div>
+
+      <div id="maternal-nutrition-section" class="course-section">
+        <h2>Maternal Nutrition</h2>
+        <p>Information on nutrition during pregnancy and postpartum.</p>
+      </div>
+
+      <div id="postpartum-care-section" class="course-section">
+        <h2>Postpartum Care</h2>
+        <p>Guidelines for the care of mothers after childbirth.</p>
+      </div>
+
+      <!-- Existing content sections -->
       <div id="course-section" class="course-section">
         <h2>Course: Basic Birthing Care in the Field</h2>
         <ul>
@@ -292,89 +334,7 @@
           <iframe src="https://www.youtube.com/embed/MqKvdmZ5YoM"></iframe>
         </div>
       </div>
-
-      <div id="clean-kit-section" class="course-section">
-        <h2>Clean Delivery Kit Checklist</h2>
-        <ul>
-          <li>Essential items for a sterile birth environment</li>
-          <li>How to prepare makeshift clean kits</li>
-          <li>When and how to use each item</li>
-        </ul>
-        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Misoprostol_Card_2017_EN_1.pdf" download>Download Misoprostol Card (PDF)</a>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/bTEIn1mMmn8"></iframe>
-        </div>
-      </div>
-
-      <div id="transport-section" class="course-section">
-        <h2>Emergency Transport Planning</h2>
-        <ul>
-          <li>Creating a transport plan in advance</li>
-          <li>Coordinating with local transport options</li>
-          <li>Communicating needs quickly during emergencies</li>
-        </ul>
-        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/What-if-I-dont.jpeg" download>Download Planning Guide</a>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/VrU1BxyD0vU"></iframe>
-        </div>
-      </div>
-
-      <div id="resus-section" class="course-section">
-        <h2>Newborn Resuscitation Basics</h2>
-        <ul>
-          <li>Assess a newborn's breathing and tone</li>
-          <li>Perform tactile stimulation techniques</li>
-          <li>Clear airways using basic tools or improvised methods</li>
-          <li>Begin bag-mask ventilation if available</li>
-          <li>Monitor signs of recovery or distress</li>
-        </ul>
-        <a class="download-link" href="newborn-resus-guide.pdf" download>Download Resuscitation Guide (PDF)</a><br/>
-        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Neonatal-Resuscitation-Tips.jpeg" download>Download Resuscitation Tips (Image)</a>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/9FvQcmrzNyk"></iframe>
-          <iframe src="https://www.youtube.com/embed/rF4jjei1fho"></iframe>
-        </div>
-      </div>
-
-      <div id="complications-section" class="course-section">
-        <h2>Managing Complications without Equipment</h2>
-        <ul>
-          <li>Managing shoulder dystocia with minimal intervention</li>
-          <li>Recognizing and addressing hemorrhage</li>
-          <li>Providing initial care for preeclampsia in the field</li>
-          <li>Handling post-delivery complications without advanced tools</li>
-        </ul>
-        <a class="download-link" href="complications-management-guide.pdf" download>Download Complications Guide</a>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/vE3UKUtgaN8"></iframe>
-        </div>
-      </div>
-
-<div class="contact-form">
-  <h2>Community Birth Preparedness Assessment</h2>
-<form>
-  <label for="name">Your Name</label>
-  <input type="text" id="name" placeholder="Enter your name" required />
-
-  <label for="email">Your Email</label>
-  <input type="email" id="email" placeholder="Enter your email" required />
-
-  <label for="pregnant-count">1. How many pregnant women are there in the vicinity?</label>
-  <input type="number" id="pregnant-count" name="pregnant-count" placeholder="e.g., 12" required>
-
-  <label for="unserved-count">2. How many will likely not receive proper antenatal and labor care?</label>
-  <input type="number" id="unserved-count" name="unserved-count" placeholder="e.g., 5" required>
-
-  <label for="education-needs">3. Describe the education/training level of women who might attend, what supplies they may have, and whether they have basic medical skills or are simply coping in an out-of-hospital setting.</label>
-  <textarea id="education-needs" name="education-needs" rows="6" placeholder="Provide as much detail as possible..." required></textarea>
-
-  <button type="submit">Submit Assessment</button>
-</form>
-</div>
-
     </main>
-
-</div>
-
+  </div>
 </body>
 </html>
