@@ -345,27 +345,24 @@
 
 <div class="contact-form">
   <h2>Community Birth Preparedness Assessment</h2>
-  <form>
-    <label for="name">Your Name</label>
-    <input type="text" id="name" placeholder="Enter your name" required />
+<form>
+  <label for="name">Your Name</label>
+  <input type="text" id="name" placeholder="Enter your name" required />
 
-    <label for="email">Your Email</label>
-    <input type="email" id="email" placeholder="Enter your email" required />
+  <label for="email">Your Email</label>
+  <input type="email" id="email" placeholder="Enter your email" required />
 
-    <label for="message">Your Message</label>
-    <textarea id="message" placeholder="General message or additional info..." rows="4" required></textarea>
+  <label for="pregnant-count">1. How many pregnant women are there in the vicinity?</label>
+  <input type="number" id="pregnant-count" name="pregnant-count" placeholder="e.g., 12" required>
 
-    <label for="pregnant-count">1. How many pregnant women are there in the vicinity?</label>
-    <input type="number" id="pregnant-count" name="pregnant-count" placeholder="e.g., 12" required>
+  <label for="unserved-count">2. How many will likely not receive proper antenatal and labor care?</label>
+  <input type="number" id="unserved-count" name="unserved-count" placeholder="e.g., 5" required>
 
-    <label for="unserved-count">2. How many will likely not receive proper antenatal and labor care?</label>
-    <input type="number" id="unserved-count" name="unserved-count" placeholder="e.g., 5" required>
+  <label for="education-needs">3. Describe the education/training level of women who might attend, what supplies they may have, and whether they have basic medical skills or are simply coping in an out-of-hospital setting.</label>
+  <textarea id="education-needs" name="education-needs" rows="6" placeholder="Provide as much detail as possible..." required></textarea>
 
-    <label for="education-needs">3. Describe the education/training level of women who might attend, what supplies they may have, and whether they have basic medical skills or are simply coping in an out-of-hospital setting.</label>
-    <textarea id="education-needs" name="education-needs" rows="6" placeholder="Provide as much detail as possible..." required></textarea>
-
-    <button type="submit">Submit Assessment</button>
-  </form>
+  <button type="submit">Submit Assessment</button>
+</form>
 </div>
 
     </main>
