@@ -113,7 +113,8 @@
       margin-top: 1em;
     }
 
-    .contact-form input, .contact-form textarea {
+    .contact-form input,
+    .contact-form textarea {
       width: 100%;
       padding: 0.75em;
       margin-top: 0.5em;
@@ -188,6 +189,7 @@
     }
 
     function toggleSection(sectionId) {
+      event.preventDefault();
       const sections = document.querySelectorAll('.course-section');
       sections.forEach(section => {
         if (section.id === sectionId) {
@@ -218,10 +220,10 @@
     <main>
       <ul class="resource-list">
         <li><a href="#" onclick="toggleSection('course-section')">Basic Birthing Care in the Field (Start Course)</a></li>
-        <li><a href="#" onclick="toggleSection('clean-kit-section')">Clean Delivery Kit Checklist (Click Here) </a></li>
+        <li><a href="#" onclick="toggleSection('clean-kit-section')">Clean Delivery Kit Checklist (Click Here)</a></li>
         <li><a href="#" onclick="toggleSection('transport-section')">Emergency Transport Planning (Click Here)</a></li>
-        <li><a href="#" onclick="toggleSection('resus-section')">Newborn Resuscitation Basics (Click Here) </a></li>
-        <li><a href="#" onclick="toggleSection('complications-section')">Managing Complications without Equipment (Click Here) </a></li>
+        <li><a href="#" onclick="toggleSection('resus-section')">Newborn Resuscitation Basics (Click Here)</a></li>
+        <li><a href="#" onclick="toggleSection('complications-section')">Managing Complications without Equipment (Click Here)</a></li>
       </ul>
 
       <div id="course-section" class="course-section">
@@ -248,8 +250,7 @@
           <li>How to prepare makeshift clean kits</li>
           <li>When and how to use each item</li>
         </ul>
-        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Misoprostol_Card_2017_EN_1.pdf" download>
-  Download Misoprostol Card (PDF)</a>
+        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Misoprostol_Card_2017_EN_1.pdf" download>Download Misoprostol Card (PDF)</a>
         <div class="video-container">
           <iframe src="https://www.youtube.com/embed/bTEIn1mMmn8"></iframe>
         </div>
@@ -262,30 +263,28 @@
           <li>Coordinating with local transport options</li>
           <li>Communicating needs quickly during emergencies</li>
         </ul>
-        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/What-if-I-dont.jpeg" download>
-  Download Planning Guide</a>
+        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/What-if-I-dont.jpeg" download>Download Planning Guide</a>
         <div class="video-container">
           <iframe src="https://www.youtube.com/embed/VrU1BxyD0vU"></iframe>
         </div>
       </div>
 
       <div id="resus-section" class="course-section">
-  <h2>Newborn Resuscitation Basics</h2>
-  <ul>
-    <li>Assess a newborn's breathing and tone</li>
-    <li>Perform tactile stimulation techniques</li>
-    <li>Clear airways using basic tools or improvised methods</li>
-    <li>Begin bag-mask ventilation if available</li>
-    <li>Monitor signs of recovery or distress</li>
-  </ul>
-  <a class="download-link" href="newborn-resus-guide.pdf" download>Download Resuscitation Guide (PDF)</a><br/>
-  <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Neonatal-Resuscitation-Tips.jpeg" download>Download Resuscitation Tips (Image)</a>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/9FvQcmrzNyk"></iframe>
-    <iframe src="https://www.youtube.com/embed/rF4jjei1fho"></iframe>
-  </div>
-</div>
-
+        <h2>Newborn Resuscitation Basics</h2>
+        <ul>
+          <li>Assess a newborn's breathing and tone</li>
+          <li>Perform tactile stimulation techniques</li>
+          <li>Clear airways using basic tools or improvised methods</li>
+          <li>Begin bag-mask ventilation if available</li>
+          <li>Monitor signs of recovery or distress</li>
+        </ul>
+        <a class="download-link" href="newborn-resus-guide.pdf" download>Download Resuscitation Guide (PDF)</a><br/>
+        <a class="download-link" href="https://raw.githubusercontent.com/jhumaira/midwife-site/main/Neonatal-Resuscitation-Tips.jpeg" download>Download Resuscitation Tips (Image)</a>
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/9FvQcmrzNyk"></iframe>
+          <iframe src="https://www.youtube.com/embed/rF4jjei1fho"></iframe>
+        </div>
+      </div>
 
       <div id="complications-section" class="course-section">
         <h2>Managing Complications without Equipment</h2>
