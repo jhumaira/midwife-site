@@ -173,6 +173,49 @@
     #login-screen button:hover {
       background-color: #005f48;
     }
+
+    .community-form {
+  background-color: #ffffff;
+  padding: 2em;
+  margin-top: 3em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 123, 94, 0.15);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.community-form h2 {
+  margin-top: 0;
+  font-size: 1.8em;
+  color: #007B5E;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.community-form form label {
+  display: block;
+  margin-top: 1.5em;
+  font-weight: bold;
+}
+
+.community-form input,
+.community-form textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+.community-form button {
+  margin-top: 2em;
+  background-color: #009688;
+  color: white;
+  padding: 0.9em 2em;
+  border: none;
+}
   </style>
   <script>
     function handleLogin(event) {
@@ -317,5 +360,21 @@
       </div>
     </main>
   </div>
+  <div class="community-form">
+  <h2>Community Birth Preparedness Assessment</h2>
+  <form>
+    <label for="pregnant-count">1. How many pregnant women are there in the vicinity?</label>
+    <input type="number" id="pregnant-count" name="pregnant-count" placeholder="e.g., 12" required>
+
+    <label for="unserved-count">2. How many will likely not receive proper antenatal and labor care?</label>
+    <input type="number" id="unserved-count" name="unserved-count" placeholder="e.g., 5" required>
+
+    <label for="education-needs">3. Describe the education/training level of women who might attend, what supplies they may have, and whether they have basic medical skills or are simply coping in an out-of-hospital setting.</label>
+    <textarea id="education-needs" name="education-needs" rows="6" placeholder="Provide as much detail as possible..." required></textarea>
+
+    <button type="submit">Submit Assessment</button>
+  </form>
+</div>
+
 </body>
 </html>
