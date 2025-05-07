@@ -181,13 +181,15 @@
 
     .contact-form {
   background-color: #ffffff;
-  padding: 2em;
-  margin-top: 3em;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 123, 94, 0.15);
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 2em;               /* Keeps internal spacing */
+  margin: 0;                  /* Removes external margins */
+  width: 100vw;               /* Full viewport width */
+  max-width: 100vw;           /* Prevents it from stopping at a narrower width */
+  box-sizing: border-box;     /* Ensures padding doesn't expand total width */
+  border-radius: 0;           /* Optional: remove rounded edges */
+  box-shadow: none;           /* Optional: remove shadow if going full-bleed */
+}
+
 }
 
 .contact-form h2 {
